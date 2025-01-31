@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>🚀 Sortify</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Algorithms</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Visualize Sorting Like Never Before!</h2>
+            <p>Pick your favorite sorting algorithm and watch it come to life with stunning animations.</p>
+            <button id="startBtn">Start Sorting</button>
+        </div>
+        <div class="hero-img">
+            <img src="your-image.png" alt="Sorting Visualizer">
+        </div>
+    </section>
+
+    <div class="control-panel">
+        <input type="text" id="arrayInput" placeholder="Enter numbers (comma-separated)">
+        <select id="algorithm">
+            <option value="bubble">Bubble Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="insertion">Insertion Sort</option>
+        </select>
+        <button id="randomBtn">Generate Random</button>
+        <button id="stopBtn">Stop</button>
+    </div>
+
+    <div id="visualizer" class="visualizer"></div>
+
+    <div id="infoMessage" class="info-message">Sorting Info...</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

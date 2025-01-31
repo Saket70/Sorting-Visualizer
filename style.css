@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #1a1a2e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    color: #ffcc00;
+    font-weight: 600;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    color: #ffcc00;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #ffcc00, #ff6666);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero button {
+    background: #ffcc00;
+    color: #1a1a2e;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.hero button:hover {
+    transform: scale(1.1);
+}
+
+.visualizer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 300px;
+    margin-top: 30px;
+}
+
+.box {
+    width: 40px;
+    margin: 0 5px;
+    background: linear-gradient(135deg, #ffcc00, #ff6666);
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+}
+
+.active {
+    background: #00f5d4;
+    transform: scale(1.1);
+}
+
+.sorted {
+    background: #28df99;
+}
+
+.info-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
