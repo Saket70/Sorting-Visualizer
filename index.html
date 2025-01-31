@@ -4,45 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorting Visualizer</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <h1>🚀 Sortify</h1>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Algorithms</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </nav>
+    <h1>Sorting Visualizer</h1>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Visualize Sorting Like Never Before!</h2>
-            <p>Pick your favorite sorting algorithm and watch it come to life with stunning animations.</p>
-            <button id="startBtn">Start Sorting</button>
-        </div>
-        <div class="hero-img">
-            <img src="your-image.png" alt="Sorting Visualizer">
-        </div>
-    </section>
-
-    <div class="control-panel">
-        <input type="text" id="arrayInput" placeholder="Enter numbers (comma-separated)">
+    <div class="controls">
+        <label for="arrayInput">Enter numbers (comma-separated):</label>
+        <input type="text" id="arrayInput" placeholder="e.g., 5,3,8,1,2">
+        
+        <label for="algorithm">Select Algorithm:</label>
         <select id="algorithm">
             <option value="bubble">Bubble Sort</option>
             <option value="selection">Selection Sort</option>
             <option value="insertion">Insertion Sort</option>
         </select>
-        <button id="randomBtn">Generate Random</button>
+        <button id="startBtn">Start Sorting</button>
+        <button id="randomBtn">Generate Random Array</button>
         <button id="stopBtn">Stop</button>
+        <button id="nextBtn">Next</button>
+        <button id="themeToggle">Toggle Dark Mode</button>
     </div>
 
-    <div id="visualizer" class="visualizer"></div>
+    <div id="visualizer"></div>
 
-    <div id="infoMessage" class="info-message">Sorting Info...</div>
+    <div id="infoMessage" class="info-box">Info Message</div>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
