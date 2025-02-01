@@ -392,3 +392,12 @@ input:focus, select:focus {
         font-size: 0.875rem;
     }
 }
+.btn.info {
+    background: var(--info-color);
+    color: white;
+    margin-right: 1rem; /* Add spacing between buttons */
+}
+
+.btn.info:hover {
+    background: #2563eb; /* Slightly darker shade for hover effect */
+}

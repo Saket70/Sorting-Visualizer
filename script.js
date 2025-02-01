@@ -284,6 +284,11 @@ document.getElementById('stopBtn').addEventListener('click', () => {
     updateInfoMessage('Sorting paused');
 });
 
+// Event listener for Source Code button
+document.getElementById('sourceCodeBtn').addEventListener('click', () => {
+    window.open('https://github.com/Saket70/Sorting-Visualizer', '_blank');
+});
+
 // Enhanced theme toggle with animation
 document.getElementById('themeToggle').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
