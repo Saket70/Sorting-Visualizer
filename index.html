@@ -5,31 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorting Visualizer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Sorting Visualizer</h1>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-sort-amount-down"></i> Sorting Visualizer</h1>
+            <button id="themeToggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
 
-    <div class="controls">
-        <label for="arrayInput">Enter numbers (comma-separated):</label>
-        <input type="text" id="arrayInput" placeholder="e.g., 5,3,8,1,2">
-        
-        <label for="algorithm">Select Algorithm:</label>
-        <select id="algorithm">
-            <option value="bubble">Bubble Sort</option>
-            <option value="selection">Selection Sort</option>
-            <option value="insertion">Insertion Sort</option>
-        </select>
-        <button id="startBtn">Start Sorting</button>
-        <button id="randomBtn">Generate Random Array</button>
-        <button id="stopBtn">Stop</button>
-        <button id="nextBtn">Next</button>
-        <button id="themeToggle">Toggle Dark Mode</button>
+        <div class="controls-container">
+            <div class="controls">
+                <div class="input-group">
+                    <label for="arrayInput">
+                        <i class="fas fa-list-ol"></i> Input Array
+                    </label>
+                    <input type="text" id="arrayInput" placeholder="e.g., 5,3,8,1,2">
+                </div>
+
+                <div class="input-group">
+                    <label for="algorithm">
+                        <i class="fas fa-code"></i> Algorithm
+                    </label>
+                    <select id="algorithm">
+                        <option value="bubble">Bubble Sort</option>
+                        <option value="selection">Selection Sort</option>
+                        <option value="insertion">Insertion Sort</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="startBtn" class="btn primary">
+                        <i class="fas fa-play"></i> Start
+                    </button>
+                    <button id="randomBtn" class="btn secondary">
+                        <i class="fas fa-random"></i> Random
+                    </button>
+                    <button id="stopBtn" class="btn danger">
+                        <i class="fas fa-stop"></i> Stop
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="visualizer-container">
+            <div id="visualizer" class="visualizer"></div>
+            <div id="infoMessage" class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <span>Select an array and algorithm to begin</span>
+            </div>
+        </div>
     </div>
-
-    <div id="visualizer"></div>
-
-    <div id="infoMessage" class="info-box">Info Message</div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
