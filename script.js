@@ -237,6 +237,65 @@ async function insertionSort(array) {
     triggerConfetti();
 }
 
+// Enhanced quick sort with automatic animations
+async function quickSort(array, low, high) {
+    const boxes = document.querySelectorAll('.box');
+    if (low < high) {
+        const pi = await partition(array, low, high);
+        await quickSort(array, low, pi - 1);
+        await quickSort(array, pi + 1, high);
+    } else {
+        boxes[low].classList.add('sorted');
+    }
+}
+
+// Partition function for quick sort
+async function partition(array, low, high) {
+    const boxes = document.querySelectorAll('.box');
+    const pivot = array[high];
+    let i = low - 1;
+
+    for (let j = low; j < high; j++) {
+        if (sortingPaused) return;
+
+        updateInfoMessage(`Comparing ${array[j]} with pivot ${pivot}`);
+        boxes[j].classList.add('active');
+
+        await autoStep();
+
+        if (array[j] < pivot) {
+            i++;
+            updateInfoMessage(`Swapping ${array[i]} and ${array[j]}`);
+            boxes[i].classList.add('swapping');
+            boxes[j].classList.add('swapping');
+
+            [array[i], array[j]] = [array[j], array[i]];
+            boxes[i].textContent = array[i];
+            boxes[j].textContent = array[j];
+
+            await sleep(300);
+            boxes[i].classList.remove('swapping');
+            boxes[j].classList.remove('swapping');
+        }
+
+        boxes[j].classList.remove('active');
+    }
+
+    updateInfoMessage(`Swapping ${array[i + 1]} and pivot ${pivot}`);
+    boxes[i + 1].classList.add('swapping');
+    boxes[high].classList.add('swapping');
+
+    [array[i + 1], array[high]] = [array[high], array[i + 1]];
+    boxes[i + 1].textContent = array[i + 1];
+    boxes[high].textContent = array[high];
+
+    await sleep(300);
+    boxes[i + 1].classList.remove('swapping');
+    boxes[high].classList.remove('swapping');
+
+    return i + 1;
+}
+
 // Generate random array with improved animation
 function generateRandomArray() {
     const array = Array.from({length: 8}, () => Math.floor(Math.random() * 50) + 1);
@@ -272,6 +331,9 @@ function startSorting() {
             break;
         case 'insertion':
             insertionSort(array);
+            break;
+        case 'quick':
+            quickSort(array, 0, array.length - 1); // Call quick sort
             break;
     }
 }

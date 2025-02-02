@@ -56,7 +56,6 @@ body::before {
         repeating-linear-gradient(45deg, rgba(79, 70, 229, 0.05) 0%, rgba(79, 70, 229, 0.05) 10%, transparent 10%, transparent 20%);
     animation: backgroundAnimation 20s ease-in-out infinite alternate;
     z-index: -1;
-    filter: blur(5px);
 }
 
 /* Enhanced Background Animation */
