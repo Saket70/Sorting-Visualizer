@@ -8,7 +8,7 @@ Features
 
 🎞 Sorting Animations: Step-by-step visualization of sorting algorithms.
 
-🔄 Multiple Sorting Algorithms: Supports Bubble Sort, Selection Sort, and Insertion Sort.
+🔄 Multiple Sorting Algorithms: Supports Quick Sort, Bubble Sort, Selection Sort, and Insertion Sort.
 
 🌙 Dark Mode Support: Toggle between light and dark themes.
 
